@@ -23,7 +23,7 @@ export default function TypeStockMovementSelectInput(
   return (
     <>
       <label className="block text-gray-700  font-bold mb-2 w-full text-start">
-        Selecione um Estoque de Produto
+        Selecione um Tipo de Movimentação
       </label>
       <select
         className={`
