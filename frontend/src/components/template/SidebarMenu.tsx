@@ -20,7 +20,7 @@ export default function SidebarMenu() {
       </div>
       <ul className="flex-grow">
         <SidebarItem url="/products" text="Produtos" icon={ShoppingCartIcon} />
-        <SidebarItem url="/" text="Estoque" icon={SettingsIcon} />
+        <SidebarItem url="/productStocks" text="Estoque" icon={SettingsIcon} />
         <SidebarItem url="/" text="Movimentações" icon={SettingsIcon} />
       </ul>
     </aside>

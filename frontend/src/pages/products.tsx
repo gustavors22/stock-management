@@ -1,9 +1,9 @@
 import type { NextPage } from "next";
 import { FormEvent, useEffect, useState } from "react";
 import ButtonModalToggle from "../components/ButtonModalToggle";
-import CreateProductForm from "../components/Product/CreateProductForm";
+import CreateProductForm from "../components/product/CreateProductForm";
 
-import { ProductsDataTable } from "../components/Product/ProductsDataTable";
+import { ProductsDataTable } from "../components/product/ProductsDataTable";
 import Layout from "../components/template/Layout";
 
 const Products: NextPage = () => {
