@@ -10,8 +10,6 @@ const Products: NextPage = () => {
   const [name, setName] = useState("");
   const [price, setPrice] = useState(0);
 
-  useEffect(() => console.log(name, price));
-
   const handleCreateNewProduct = async (event: FormEvent) => {
     event.preventDefault();
 

@@ -1,35 +1,48 @@
 import type { NextPage } from "next";
 import { FormEvent, useEffect, useState } from "react";
 import ButtonModalToggle from "../components/ButtonModalToggle";
-import CreateProductForm from "../components/product/CreateProductForm";
+import CreateStockMovementForm from "../components/stockMovements/CreateStockMovementForm";
 
 import { StockMoventsDataTable } from "../components/stockMovements/StockMoventsDataTable";
 import Layout from "../components/template/Layout";
 
 const StockMovements: NextPage = () => {
-  const [name, setName] = useState("");
-  const [price, setPrice] = useState(0);
+  const [productStockId, setProductStockId] = useState("");
+  const [typeStockMovementId, setTypeStockMovementId] = useState("");
+  const [quantity, setQuantity] = useState("");
 
-  useEffect(() => console.log(name, price));
+  useEffect(() =>
+    console.log(`
+    prodStock ${productStockId},
+    typeMov ${typeStockMovementId}
+    quantity ${quantity}
+  `)
+  );
 
-  const handleCreateNewProduct = async (event: FormEvent) => {
+  const handleCreateNewStockMovent = async (event: FormEvent) => {
     event.preventDefault();
 
-    fetch("http://127.0.0.1:8000/api/products", {
+    fetch("http://127.0.0.1:8000/api/stock-movements", {
       method: "POST",
-      body: JSON.stringify({ name, price }),
+      body: JSON.stringify({
+        product_stock_id: productStockId,
+        type_stock_movement_id: typeStockMovementId,
+        quantity: quantity,
+      }),
       headers: { "Content-type": "application/json; charset=UTF-8" },
     }).then((response) => response.json());
 
     window.location.reload();
   };
 
-  const createProductForm = () => (
-    <CreateProductForm
-      name={name}
-      price={price}
-      onChangeNameEvent={setName}
-      onChangePriceEvent={setPrice}
+  const createStockMovementForm = () => (
+    <CreateStockMovementForm
+      productStockId={productStockId}
+      typeStockMovementId={typeStockMovementId}
+      quantity={quantity}
+      onChangeProductStockIdEvent={setProductStockId}
+      onChangeTypeStockMovementIdEvent={setTypeStockMovementId}
+      onChangeQuantityEvent={setQuantity}
     />
   );
 
@@ -50,9 +63,9 @@ const StockMovements: NextPage = () => {
       <div className="flex justify-end mb-4">
         <ButtonModalToggle
           color="yellow"
-          form={createProductForm()}
+          form={createStockMovementForm()}
           modalExtraButton={modalExtraButton()}
-          submitFormModalEvent={handleCreateNewProduct}
+          submitFormModalEvent={handleCreateNewStockMovent}
         >
           Cadastrar uma Movimentação
         </ButtonModalToggle>

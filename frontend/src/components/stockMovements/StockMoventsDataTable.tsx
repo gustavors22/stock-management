@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { ProductInterface } from "../../Interfaces/ProductInterface";
 import { StockMovementsInterface } from "../../Interfaces/StockMovementsInterface";
+import { TypeStockMovementInterface } from "../../Interfaces/TypeStockMovementInterface";
 import ButtonModalToggle from "../ButtonModalToggle";
 import DeleteButton from "../DeleteButton";
 import SeeStockMovement from "./SeeStockMovement";
@@ -66,8 +67,16 @@ export function StockMoventsDataTable() {
                 <td className="py-4 px-6">{stockMovement.quantity}</td>
               </th>
               <th>
-                <td className="py-4 px-6">
-                  {stockMovement.type_stock_movement.description}
+                <td className={`py-4 px-6`}>
+                  <span
+                    className={`inline  ${
+                      stockMovement.type_stock_movement_id == 1
+                        ? "text-green-400"
+                        : "text-red-400"
+                    }`}
+                  >
+                    {stockMovement.type_stock_movement.description}
+                  </span>
                 </td>
               </th>
               <th>
@@ -83,13 +92,6 @@ export function StockMoventsDataTable() {
                   >
                     Ver
                   </ButtonModalToggle>
-                </td>
-                <td className="py-4 px-6 text-right">
-                  <DeleteButton
-                    url={`http://127.0.0.1:8000/api/stock-movements/${stockMovement.id}`}
-                  >
-                    Deletar
-                  </DeleteButton>
                 </td>
               </th>
             </tr>
