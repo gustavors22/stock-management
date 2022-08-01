@@ -1,4 +1,4 @@
-import { SettingsIcon, ShoppingCartIcon } from "../icons";
+import { ArchiveIcon, ForwardIcon, ShoppingCartIcon } from "../icons";
 import Logo from "./Logo";
 import SidebarItem from "./SidebarItem";
 
@@ -19,12 +19,12 @@ export default function SidebarMenu() {
         <Logo />
       </div>
       <ul className="flex-grow">
-        <SidebarItem url="/products" text="Produtos" icon={ShoppingCartIcon} />
-        <SidebarItem url="/productStocks" text="Estoque" icon={SettingsIcon} />
+        <SidebarItem url="/" text="Produtos" icon={ShoppingCartIcon} />
+        <SidebarItem url="/productStocks" text="Estoque" icon={ArchiveIcon} />
         <SidebarItem
           url="/stockMovements"
           text="Movimentações"
-          icon={SettingsIcon}
+          icon={ForwardIcon}
         />
       </ul>
     </aside>
