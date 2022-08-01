@@ -1,7 +1,3 @@
-import { type } from "os";
-import { useState } from "react";
-import { ProductInterface } from "../Interfaces/ProductInterface";
-
 interface InputProps {
   label: string;
   value?: any;
@@ -9,6 +5,7 @@ interface InputProps {
   type: string;
   disabled?: boolean;
   placeholder?: string;
+  onChangeEvent?: any;
 }
 
 export default function Input(props: InputProps) {
@@ -33,6 +30,9 @@ export default function Input(props: InputProps) {
         defaultValue={props.defaultValue}
         value={props.value}
         disabled={props.disabled}
+        onChange={(event) =>
+          props.onChangeEvent && props.onChangeEvent(event.target.value)
+        }
       />
     </div>
   );

@@ -6,6 +6,7 @@ interface ButtonModalToggleProps {
   children: any;
   form: any;
   modalExtraButton?: any;
+  submitFormModalEvent?: any;
 }
 
 export default function ButtonModalToggle(props: ButtonModalToggleProps) {
@@ -34,6 +35,7 @@ export default function ButtonModalToggle(props: ButtonModalToggleProps) {
           setModalOn={setModalOn}
           form={props.form}
           modalExtraButton={props.modalExtraButton}
+          submitFormModalEvent={props.submitFormModalEvent}
         />
       )}
     </>
