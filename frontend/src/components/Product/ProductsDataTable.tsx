@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { ProductInterface } from "../../Interfaces/ProductInterface";
 import ButtonModalToggle from "../ButtonModalToggle";
+import DeleteButton from "../DeleteButton";
 import SeeProduct from "./SeeProduct";
 
 export function ProductsDataTable() {
@@ -77,12 +78,11 @@ export function ProductsDataTable() {
                   </ButtonModalToggle>
                 </td>
                 <td className="py-4 px-6 text-right">
-                  <a
-                    href="#"
-                    className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                  <DeleteButton
+                    url={`http://127.0.0.1:8000/api/products/${product.id}`}
                   >
                     Deletar
-                  </a>
+                  </DeleteButton>
                 </td>
               </th>
             </tr>

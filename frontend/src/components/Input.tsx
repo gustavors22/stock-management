@@ -33,6 +33,7 @@ export default function Input(props: InputProps) {
         onChange={(event) =>
           props.onChangeEvent && props.onChangeEvent(event.target.value)
         }
+        required
       />
     </div>
   );
