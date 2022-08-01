@@ -21,7 +21,11 @@ export default function SidebarMenu() {
       <ul className="flex-grow">
         <SidebarItem url="/products" text="Produtos" icon={ShoppingCartIcon} />
         <SidebarItem url="/productStocks" text="Estoque" icon={SettingsIcon} />
-        <SidebarItem url="/" text="Movimentações" icon={SettingsIcon} />
+        <SidebarItem
+          url="/stockMovements"
+          text="Movimentações"
+          icon={SettingsIcon}
+        />
       </ul>
     </aside>
   );

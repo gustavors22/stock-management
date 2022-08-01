@@ -3,7 +3,7 @@ import { ProductStockInterface } from "../../Interfaces/ProductStockInterface";
 import Input from "../Input";
 
 interface SeeProductStockProps {
-  productId: number | string;
+  productStockId: number | string;
 }
 
 export default function SeeProductStock(props: SeeProductStockProps) {
@@ -12,7 +12,7 @@ export default function SeeProductStock(props: SeeProductStockProps) {
   const formatDate = (date: any) => new Date(date).toLocaleDateString();
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:8000/api/product-stocks/${props.productId}`)
+    fetch(`http://127.0.0.1:8000/api/product-stocks/${props.productStockId}`)
       .then((response) => response.json())
       .then((data) => setProductStock(data));
   }, []);
