@@ -12,6 +12,7 @@ export default function SidebarItem(props: SidebarItemProps){
             hover:bg-gray-100
         `}>
             <Link href={props.url}>
+                <div>
                 <a className={`
                     flex flex-col justify-center items-center
                     h-20 w-full
@@ -23,6 +24,8 @@ export default function SidebarItem(props: SidebarItemProps){
                         {props.text}
                     </span>
                 </a>
+
+                </div>
             </Link>
         </li>
     )
