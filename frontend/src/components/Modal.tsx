@@ -20,7 +20,7 @@ export default function Modal(props: ProductModalInterface) {
             <div>
               <form method="POST" onSubmit={props.submitFormModalEvent}>
                 <div className="flex-col">{props.form}</div>
-                <div className="flex justify-center">
+                <div className="flex justify-center mt-2">
                   {props.modalExtraButton}
                   <button
                     onClick={handleCancelClick}
