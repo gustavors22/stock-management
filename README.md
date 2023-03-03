@@ -1,7 +1,5 @@
 # Sistema de Gerenciamento de Estoque
 
-Sistema Desenvolvido para o teste da empresa Comuniverse
-
 # Tecnologias
 
 - React e Typescript
